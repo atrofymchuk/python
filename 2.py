@@ -8,7 +8,8 @@ print(x.replace('ideapad', 'PC-12092'))
 # 1.4. Найдите в логе слово failed и выведите его позицию, если такого слова нет, выведите -1.
 print(x.find('failed'))
 # 1.5. Посчитайте количество букв 'S' в строке вне зависимости от регистра (и прописных, и заглавных).
-print(x.count('s'))
+x15 = x.lower()
+print(x15.count('s'))
 # 1.6. Выделите из строки значения часов, минут и секунд, суммируйте эти 3 числа и выведите полученное число на экран.
 x4 = x[7:9]
 x5 = x[10:12]
@@ -29,3 +30,9 @@ y5 = y[0:6]
 y6 = y[7:15]
 print(f'The PC "{y1}" receive message from service "{y2}" what says "{y4}" because "{y3}" at {y5} , {y6}')
 
+y7 = y.split()
+print(y7)
+y8 = " ".join(y7[5:9])
+y9 = " ".join(y7[11:14])
+
+print(f' The PC "{y7[3]}" receive message from service {y7[4]} what says "{y8}" because "{y9}" at {y7[0]} {y7[1]}, {y7[2]}')
