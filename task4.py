@@ -9,7 +9,7 @@ list = [
 ]
 number = int(input("Введите номер накопителя:")) - 1
 free_mem_number = (list[number]['total']) - (list[number]['used'])
-free_mem_percent = (list[number]['used']) * 100 / (list[number]['total'])
+free_mem_percent = 100 - (list[number]['used']) * 100 / (list[number]['total'])
 free_mem_number1 = (round(free_mem_number*1e-09))
 free_mem_percent1 = (round(free_mem_percent))
 if free_mem_number1 < 10 or free_mem_percent1 < 5:
