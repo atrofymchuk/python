@@ -9,57 +9,34 @@ list = ['May 18 13:06:54 ideapad kwin_x11[1273]: Qt Quick Layouts: Detected recu
          'May 23 08:06:14 PC-00233 kernel: [221559.381614] usbcore: registered new interface driver snd-usb-audio',
          'May 24 16:19:52 PC-00233 systemd[1116]: Reached target Sound Card.',
          'May 24 19:26:40 PC-00102 rtkit-daemon[1131]: Supervising 5 threads of 2 processes of 1 users.']
-
+# Пример заполнения одной словаря одной строкой
 list0 = list[0].split()
-list1 = list[1].split()
-list2 = list[2].split()
-list3 = list[3].split()
-list4 = list[4].split()
-list5 = list[5].split()
-list6 = list[6].split()
-list7 = list[7].split()
-list8 = list[8].split()
-list9 = list[9].split()
-
 dict1 = {
-    "1": {
         "time": " ".join(list0[0:3]),
         "pc_name": " ".join(list0[3:4]),
         "service_name": " ".join(list0[4:5]),
         "message": " ".join(list0[5:])
-    },
-    "2": {
+}
+
+# 3. Заполните словарь для одной из строк лога с помощью данного алгоритма, запросив у пользователя номер строки
+# с помощью input(). Выведите на экран информацию из текущего словаря в таком виде:
+x = input("Укажите номер строки:\n")
+x = int(x) - 1
+list1 = list[x].split()
+serv_name = " ".join(list1[4:5])
+serv_name = serv_name.replace(":", "")
+dict2 = {
         "time": " ".join(list1[0:3]),
         "pc_name": " ".join(list1[3:4]),
-        "service_name": " ".join(list1[4:5]),
+        "service_name": serv_name,
         "message": " ".join(list1[5:])
-    },
-    "3": {
-        "time": " ".join(list2[0:3]),
-        "pc_name": " ".join(list2[3:4]),
-        "service_name": " ".join(list2[4:5]),
-        "message": " ".join(list2[5:])
-    },
-    "4": {
-        "time": " ".join(list3[0:3]),
-        "pc_name": " ".join(list3[3:4]),
-        "service_name": " ".join(list3[4:5]),
-        "message": " ".join(list3[5:])
-    },
-    "5": {
-        "time": " ".join(list4[0:3]),
-        "pc_name": " ".join(list4[3:4]),
-        "service_name": " ".join(list4[4:5]),
-        "message": " ".join(list4[5:])
-    },
 }
-#print('Task 2:')
-#print(dict1)
 
-# 3. Заполните словарь для одной из строк лога с помощью данного алгоритма, запросив у пользователя номер строки с помощью input(). Выведите на экран информацию из текущего словаря в таком виде:
-x = input("Укажите номер строки\n")
-y = dict1[x]
-#print(y)
+x1 = dict2['pc_name']
+x2 = dict2['message']
+
+print("Task 3:")
+print(f'{x1}: {x2}')
 
 # 4.1. Скопируйте к себе литерал списка:
 list_4_1 = ['May 26 12:48:18', 'ideapad', 'systemd[1]', 'Finished Message of the Day.']
@@ -72,16 +49,24 @@ list_4_2 = ['time', 'pc_name', 'service_name', 'message']
 dict_4_1 = dict(zip(list_4_2, list_4_1))
 print("Task 4.3")
 print(dict_4_1)
-# 5. Создайте список словарей: из словаря, который вы получили в пункте 3 и словаря из пункта 4 (в итоге у вас должен получиться список, состоящий из двух словарей). Выведите полученный список на экран
+
+# 5. Создайте список словарей: из словаря, который вы получили в пункте 3 и словаря из пункта 4
+# (в итоге у вас должен получиться список, состоящий из двух словарей). Выведите полученный список на экран
 list_5_1 = []
-list_5_1.append(y)
+list_5_1.append(dict2)
 list_5_1.append(dict_4_1)
 print('Task 5:')
 print(list_5_1)
-#
-# # 6. Используя преобразование во множество, выведите список совпадающих значений полученных словарей.
+
+# 6. Используя преобразование во множество, выведите список совпадающих значений полученных словарей.
 # Что касается п. 6, тут нужно использовать функцию set для преобразования во множество.
 # Далее вы используете операцию пересечения множеств &.
 # Но учтите, что если вы просто обернете словарь функцией set(), то получите множество ключей.
 # Чтобы получить множество значений, используйте также функцию values()
-# print('Task 6:')
+print('Task 6:')
+set_1 = list_5_1[0]
+set_2 = list_5_1[1]
+set_4 = set(set_1.values())
+set_5 = set(set_2.values())
+set_6 = (set_4 & set_5)
+print(set_6)
