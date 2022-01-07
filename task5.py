@@ -1,4 +1,5 @@
 list = [
+    'May 18 11:59:18 PC-00102 plasmashell[1312]: kf.plasma.core: findInCache with a lastModified timestamp of 0 is deprecated'
     'May 18 13:06:54 ideapad kwin_x11[1273]: Qt Quick Layouts: Detected recursive rearrange. Aborting after two iterations.',
     'May 20 09:16:28 PC0078 systemd[1]: Starting PackageKit Daemon...',
     'May 20 11:01:12 PC-00102 PackageKit: daemon start',
