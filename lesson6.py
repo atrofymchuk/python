@@ -73,3 +73,11 @@ with open('file_3.txt', 'w', encoding='cp1251') as file_1:
 with open('file_6.txt', 'r', encoding='cp1251') as file_1:
     exec('veg = ' + file_1.read())
 print(veg['помидор']['блюда'])
+
+file_3 = open("file_6.txt", "r")
+list_21 = file_3.readlines()
+for line in list_21:
+    file_3.seek(7)
+    file_4 = file_3.read(8)
+    # # file_3.seek(0,0)
+    print(file_4)
