@@ -12,6 +12,6 @@ file_1.close()
 # 3. Считайте из этого файла время первой записи. Ничего кроме времени считывать не нужно!
 # Выведите это время на экран.
 file_3 = open('file_6.txt', 'r')
-file_3.seek(6)
-print(file_3.read(9))
+file_3.seek(7)
+print(file_3.read(8))
 file_3.close()
