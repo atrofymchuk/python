@@ -24,7 +24,7 @@ x = input("Укажите номер строки:\n")
 x = int(x) - 1
 list1 = list[x].split()
 serv_name = " ".join(list1[4:5])
-`serv_name = serv_name.replace(":", "")`
+serv_name = serv_name.replace(":", "")
 dict2 = {
         "time": " ".join(list1[0:3]),
         "pc_name": " ".join(list1[3:4]),
