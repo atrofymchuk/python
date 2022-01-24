@@ -33,29 +33,14 @@ def my_func(out_list, *args):
             "message": " ".join(list_0[5:])
         }
         out_list.append(dict_1)
-# my_func(out_list, input_list[0], input_list[1], input_list[2])
-# print(out_list)
-# out_list = []
-# out_list_1 = []
-# def my_func(out_list, *args):
-#
-#     for key in args:
-#         list_0 = key.split()
-#         list_1 = " ".join(list_0[0:3])
-#         list_2 = " ".join(list_0[3:4])
-#         list_3 = " ".join(list_0[4:5])
-#         list_4 = " ".join(list_0[5:])
-#         return out_list_1.append({"time": list_1, "pc_name": list_2, "service_name": list_3, "message": list_4})
-# print(my_func(out_list, input_list[0], input_list[1], input_list[2]))
-# print(my_func())
+
 # 3. Создайте пустой список и добавьте в него 1ю, 2ю и 4ю запись из списка логов с помощью одного вызова вашей функции.
 # Выведите полученный список на экран
-list_5 = []
-my_func(out_list, input_list[0], input_list[1], input_list[3])
-for i in range(3):
-    list_5.append(out_list[i])
 
-print(list_5)
+# list_5 = []
+my_func(out_list, input_list[0], input_list[1], input_list[3])
+print(out_list)
+
 list_7 = [
     {'id': 382, 'total': 999641890816, 'used': 228013805568},
     {'id': 385, 'total': 61686008768, 'used': 52522710872},
@@ -77,16 +62,14 @@ list_7 = [
 # (достаточно свободного места, мало свободного места и критически мало свободного места соответственно).
 #
 # 5.4. Возвращает сформированный словарь.
-memory_ok=[]
-memory_not_enough=[]
-memory_critical=[]
-dict_2 = {'memory_ok': memory_ok, 'memory_not_enough': memory_not_enough, 'memory_critical': memory_critical}
 def my_func_1(*args):
     i = 0
+    memory_ok = []
+    memory_not_enough = []
+    memory_critical = []
+    dict_2 = {'memory_ok': memory_ok, 'memory_not_enough': memory_not_enough, 'memory_critical': memory_critical}
     for key in args:
-        # print(list_7[i]['total'])
         id_disk = list_7[i]['id']
-        # print(id_disk)
         free_mem_number = (list_7[i]['total']) - (list_7[i]['used'])
         free_mem_percent = 100 - (list_7[i]['used']) * 100 / (list_7[i]['total'])
         free_mem_number1 = (round(free_mem_number * 1e-09))
@@ -101,6 +84,5 @@ def my_func_1(*args):
             print(f'на накопителе {id_disk} достаточно свободного места')
             memory_ok.append(id_disk)
         i = i + 1
-my_func_1(list_7[0],list_7[1], list_7[2],list_7[3], list_7[4], list_7[5], list_7[6])
-# 6.Примените эту функцию к вашему списку и выведите словарь, полученный в результате ее работы, на экран.
-print(dict_2)
+    return dict_2
+print(my_func_1(*list_7))
