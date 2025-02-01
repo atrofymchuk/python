@@ -1,0 +1,2 @@
+# Task:
+Write script which gets system information like distro info, memory(total, used, free), CPU info (model, core numbers, speed), current user, system load average, IP address. Use params for specifying resource. (e.g. -d for distro -m for memory, -c for CPU, -u for user info, -l for load average, -i for IP address).

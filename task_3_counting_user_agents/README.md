@@ -1,0 +1,2 @@
+# Task:
+Create script which reads access log from file (name of file is provided as argument). As output script should provide total number of different User Agents and than provide statistic with number of requests from each of them. - access.log from bash tasks
